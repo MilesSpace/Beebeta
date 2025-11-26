@@ -1,10 +1,11 @@
-import { Button } from './ui/button';
 import { Menu, Globe } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import logoImage from 'figma:asset/4a695bbf97b9780e60c6ef02d5310c6e0f483f44.png';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../locales/translations';
+
+// BEE Beta Logo - 使用网络链接
+const logoImage = 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/icon/bee_beta.png';
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
