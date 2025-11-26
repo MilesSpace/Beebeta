@@ -62,5 +62,5 @@
           "preview": "vite preview",
           "deploy": "npm run build && gh-pages -d dist"
       },
-      "homepage": "https://你的GitHub用户名.github.io/Beebeta/"
+      "homepage": "https://milesspace.github.io/Beebeta/"
   }
