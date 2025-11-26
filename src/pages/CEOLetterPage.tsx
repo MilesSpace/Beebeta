@@ -1,15 +1,21 @@
 import { Quote, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
-import ceoImage from 'figma:asset/48e07d5066d10d3e10ffa694aff6e7e6ed8ac420.png';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useEffect } from 'react';
 
 // BEE Beta Logo - 使用网络链接
 const logoImage = 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/icon/bee_beta.png';
+// CEO 图片 - 使用网络链接
+const ceoImage = 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/pacer/pin.png';
 
 export function CEOLetterPage() {
   const { language } = useLanguage();
   const isEn = language === 'en';
+
+  useEffect(() => {
+    document.title = 'Bee-Beta - CEO Letter';
+  }, []);
   
   return (
     <div className="min-h-screen bg-black">
