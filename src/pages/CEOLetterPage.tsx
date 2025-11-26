@@ -3,17 +3,13 @@ import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import ceoImage from 'figma:asset/48e07d5066d10d3e10ffa694aff6e7e6ed8ac420.png';
 import { useLanguage } from '../contexts/LanguageContext';
-import { useEffect } from 'react';
 
 // BEE Beta Logo - 使用网络链接
 const logoImage = 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/icon/bee_beta.png';
 
 export function CEOLetterPage() {
-  const { t } = useLanguage();
-
-  useEffect(() => {
-    document.title = 'Bee-Beta - CEO Letter';
-  }, []);
+  const { language } = useLanguage();
+  const isEn = language === 'en';
   
   return (
     <div className="min-h-screen bg-black">
@@ -30,7 +26,7 @@ export function CEOLetterPage() {
                 className="text-[#ffc75a] hover:text-[#ffc75a]/80 hover:bg-[#ffc75a]/10"
               >
                 <ArrowLeft className="w-4 h-4 mr-2" />
-                {t('back_to_home')}
+                {isEn ? 'Back to Home' : '返回首页'}
               </Button>
             </Link>
           </div>
@@ -44,10 +40,10 @@ export function CEOLetterPage() {
             {/* Page Title */}
             <div className="text-center mb-16">
               <h1 className="text-[#ffc75a] mb-4">
-                {t('a_letter_to_students')}
+                {isEn ? 'A Letter to Students' : '致学员的一封信'}
               </h1>
               <p className="text-gray-400">
-                {t('learn_ai_shape_the_future')}
+                {isEn ? 'Learn AI, Shape the Future' : 'Learn AI, Build Reality. 学AI，创未来。'}
               </p>
             </div>
 
@@ -61,12 +57,12 @@ export function CEOLetterPage() {
                 />
               </div>
               <div className="text-center md:text-left">
-                <h2 className="text-white mb-2">{t('pin_zhou')}</h2>
+                <h2 className="text-white mb-2">{isEn ? 'Pin Zhou' : 'Pin Zhou 周品'}</h2>
                 <p className="text-[#ffc75a] mb-2">
-                  {t('founder_of_bebee_ai')}
+                  {isEn ? 'Founder of BEEBEE AI' : 'BEEBEE AI 创始人'}
                 </p>
                 <p className="text-gray-400 text-sm">
-                  {t('initiator_of_be_beta_program')}
+                  {isEn ? 'Initiator of BEE BETA Program' : 'BEE BETA 项目发起人'}
                 </p>
               </div>
             </div>
@@ -77,386 +73,686 @@ export function CEOLetterPage() {
               
               <div className="relative z-10 space-y-6 text-gray-400 leading-relaxed">
                 <p className="text-white">
-                  {t('dear_student')}
+                  {isEn ? 'Dear Student:' : '亲爱的同学：'}
                 </p>
 
                 <p>
-                  {t('hello_i_am_pin')}
+                  {isEn 
+                    ? 'Hello, I\'m Pin, the founder of the BEE BETA three-stage curriculum system.'
+                    : '你好，我是 BEE BETA 三阶课程体系的发起人 Pin。'
+                  }
                 </p>
 
                 <p>
-                  {t('thank_you_for_taking_the_time')}
+                  {isEn 
+                    ? 'Thank you for taking the time to learn about our program. Through this letter, I want to have an honest conversation with you about:'
+                    : '非常感谢你愿意花时间了解我们的课程。我想借这封信，和你坦诚聊聊：'
+                  }
                   <br />
-                  {t('why_we_created_this_system')}
+                  {isEn 
+                    ? 'Why we\'ve created this intensive, real-world AI product engineering system for college students and working learners;'
+                    : '为什么我们要为大学生和在职学习者打造这样一套强度不低、目标极实的 AI 产品工程体系；'
+                  }
                   <br />
-                  {t('what_core_challenges_it_solves')}
+                  {isEn 
+                    ? 'What core challenges it solves for your future development;'
+                    : '它究竟解决你未来发展的哪些核心问题；'
+                  }
                   <br />
-                  {t('how_we_will_accompany_you')}
+                  {isEn 
+                    ? 'And how we\'ll accompany you on the journey from "using AI" to "building products," "building systems," and "building ventures."'
+                    : '以及，我们如何陪你一起从「会用 AI」走向「能做产品」「能做工程」「能做事业」。'
+                  }
                 </p>
 
                 {/* Section 1 */}
                 <div className="pt-6">
                   <h3 className="text-[#ffc75a] mb-4">
-                    {t('why_create_the_beta_system')}
+                    {isEn 
+                      ? '1. Why Create the BETA System for Students and Early-Career Professionals?'
+                      : '1. 为什么要为大学生与准职业人群开设 BETA 体系？'
+                    }
                   </h3>
                   
                   <p>
-                    {t('over_the_past_few_years')}
+                    {isEn 
+                      ? 'Over the past few years, we\'ve worked with students from MIT, Cornell, UIUC, Tsinghua, Zhejiang, UCL and other top universities.'
+                      : '过去几年里，我们与来自 MIT、康奈尔、UIUC、清华、浙大、UCL 等名校背景的同学合作过不少项目。'
+                    }
                     <br />
-                    {t('they_are_smart')}
+                    {isEn 
+                      ? 'They\'re smart, capable learners with strong theoretical foundations, but they all face a common reality:'
+                      : '他们聪明、会学、有理论功底，但也普遍面临一个现实：'
+                    }
                   </p>
 
                   <p className="text-white italic">
-                    {t('the_gap_from_theory_to_practice')}
+                    {isEn 
+                      ? 'The gap from theory to practice is far more challenging than imagined.'
+                      : '理论到实践的跨越，远比想象中艰难。'
+                    }
                   </p>
 
                   <p>
-                    {t('especially_in_the_ai_era')}
+                    {isEn 
+                      ? 'Especially in the AI era, true competitiveness isn\'t about "knowing prompts" or "calling APIs,"'
+                      : '尤其在 AI 时代，真正有竞争力的不是"会提示词""会调 API"，'
+                    }
                     <br />
-                    {t('it_is_about')}
+                    {isEn ? 'It\'s about:' : '而是：'}
                   </p>
 
                   <ul className="list-disc list-inside space-y-2 ml-4">
-                    {t('breaking_down_abstract_ideas')}
-                    {t('using_the_right_questions')}
-                    {t('integrating_model_capabilities')}
-                    {t('launching_products_to_real_markets')}
+                    {isEn ? (
+                      <>
+                        <li>Breaking down abstract ideas into clear requirements</li>
+                        <li>Using the right questions to drive AI toward reliable outputs</li>
+                        <li>Integrating model capabilities into products that work, are usable, and can go live</li>
+                        <li>Launching products to real markets, gathering feedback, and iterating continuously</li>
+                      </>
+                    ) : (
+                      <>
+                        <li>能把抽象想法拆成清晰的需求</li>
+                        <li>能用正确的提问驱动 AI 给出可靠产物</li>
+                        <li>能把模型能力整合成一个能跑、能用、能上线的产品</li>
+                        <li>能让产品跑到真实市场里，拿到反馈，持续迭代</li>
+                      </>
+                    )}
                   </ul>
 
                   <p>
-                    {t('in_other_words')}
+                    {isEn 
+                      ? 'In other words, just knowing how to code or call models isn\'t enough to stay competitive in the new tech cycle.'
+                      : '换句话说，仅仅会写代码、会调用模型，不足以在新的技术周期站稳脚跟。'
+                    }
                   </p>
 
                   <p>
-                    {t('as_fei_fei_li_said')}
+                    {isEn ? 'As Fei-Fei Li said:' : '如李飞飞所说：'}
                     <br />
                     <span className="text-[#ffc75a]">
-                      {t('our_human_education_system')}
+                      {isEn 
+                        ? '"Our human education system has been stagnant for one or two hundred years. What worries me most is the current lack of quality public AI education."'
+                        : '"我们的人类教育系统早已僵化，固步自封一二百年了。我最担心的就是现在缺乏优质的AI公共教育。"'
+                      }
                     </span>
                   </p>
 
                   <p>
-                    {t('schools_teach_knowledge')}
+                    {isEn ? 'Schools teach knowledge;' : '学校教的是知识；'}
                     <br />
-                    {t('companies_need_capabilities')}
+                    {isEn ? 'Companies need capabilities;' : '企业要的是能力；'}
                     <br />
-                    {t('and_the_era_demands_people')}
+                    {isEn 
+                      ? 'And the era demands people who can turn AI into real value.'
+                      : '而时代要的是能把 AI 变成现实价值的人。'
+                    }
                   </p>
 
                   <p>
-                    {t('beta_was_born')}
+                    {isEn 
+                      ? 'BETA was born to bridge this gap:'
+                      : 'BETA 就是为这个断层诞生的：'
+                    }
                     <br />
-                    {t('helping_you_gain_core_practical_skills')}
+                    {isEn 
+                      ? 'Helping you gain core practical skills in '
+                      : '帮助你在年轻阶段，就获得 '
+                    }
                     <span className="text-[#ffc75a]">
-                      {t('ai_product_engineering_market_validation')}
+                      {isEn 
+                        ? 'AI product engineering + market validation'
+                        : 'AI 产品工程 + 市场验证'
+                      }
                     </span>
-                    {t('while_youre_young')}
+                    {isEn 
+                      ? ' while you\'re young.'
+                      : ' 的核心实战力。'
+                    }
                   </p>
                 </div>
 
                 {/* Section 2 */}
                 <div className="pt-6">
                   <h3 className="text-[#ffc75a] mb-4">
-                    {t('the_logic_behind_betas_three_stage_curriculum')}
+                    {isEn 
+                      ? '2. The Logic Behind BETA\'s Three-Stage Curriculum'
+                      : '2. BETA 三阶课程体系的逻辑'
+                    }
                   </h3>
                   
                   <p>
-                    {t('beta_doesnt_teach_concepts')}
+                    {isEn 
+                      ? 'BETA doesn\'t teach concepts, make false promises, or have you invent products in PowerPoint.'
+                      : 'BETA 不讲概念、不做虚假承诺，不让你在 PPT 上发明产品。'
+                    }
                     <br />
-                    {t('from_day_one')}
+                    {isEn 
+                      ? 'From day one, our system is focused on'
+                      : '我们的体系从第一天开始，就是奔着'
+                    }
                     <span className="text-[#ffc75a]">
-                      {t('real_launch')}
+                      {isEn ? '"real launch."' : '「真实上线」'}
                     </span>
-                    {t('')}
+                    {isEn ? '' : '去的。'}
                   </p>
 
                   <p>
-                    {t('it_consists_of_three_major_stages')}
+                    {isEn 
+                      ? 'It consists of three major stages, corresponding to three types of capabilities:'
+                      : '它由三大阶段组成，对应三种能力：'
+                    }
                   </p>
 
                   <div className="bg-black/30 p-6 rounded-lg border border-[#ffc75a]/20 mt-4">
                     <h4 className="text-white mb-3">
-                      {t('beta_galaxy_camp')}
+                      {isEn 
+                        ? 'Beta Galaxy Camp — Foundational AI Native Product Engineering'
+                        : 'Beta 星空营（Galaxy）——初阶 AI Native 产品工程'
+                      }
                     </h4>
                     <p className="mb-3">
-                      <span className="text-[#ffc75a]">{t('suitable_for')}</span>
-                      {t('those_with_weak_foundations')}
+                      <span className="text-[#ffc75a]">{isEn ? 'Suitable for: ' : '适合：'}</span>
+                      {isEn 
+                        ? 'Those with weak foundations, ideas, and hoping to quickly build their first AI product'
+                        : '基础薄弱、有想法、希望快速做出第一款 AI 产品的人'
+                      }
                     </p>
                     <p className="mb-2">
-                      <span className="text-[#ffc75a]">{t('goals')}</span>
+                      <span className="text-[#ffc75a]">{isEn ? 'Goals:' : '目标：'}</span>
                     </p>
                     <ul className="list-disc list-inside space-y-1 ml-4">
-                      {t('build_a_publicly_launchable_product')}
-                      {t('have_your_own_domain')}
-                      {t('experience_the_complete_0_1_product_process')}
-                      {t('get_a_portfolio_for_internship_applications')}
+                      {isEn ? (
+                        <>
+                          <li>Build a publicly launchable product in 6 weeks</li>
+                          <li>Have your own domain, deployment, users, cold start</li>
+                          <li>Experience the complete 0→1 product process</li>
+                          <li>Get a portfolio for internship applications</li>
+                        </>
+                      ) : (
+                        <>
+                          <li>在 6 周内做出一个可公开发布的成品</li>
+                          <li>拥有自己的域名、部署、用户、冷启动</li>
+                          <li>体验完整的产品从 0→1 流程</li>
+                          <li>拿到能用于投递实习与申请的作品集</li>
+                        </>
+                      )}
                     </ul>
                   </div>
 
                   <div className="bg-black/30 p-6 rounded-lg border border-[#ffc75a]/20 mt-4">
                     <h4 className="text-white mb-3">
-                      {t('beta_cosmos_camp')}
+                      {isEn 
+                        ? 'Beta Cosmos Camp — Advanced Full-Chain AI Engineering'
+                        : 'Beta 深空营（Cosmos）——高阶全链条 AI 工程实战'
+                      }
                     </h4>
                     <p className="mb-3">
-                      <span className="text-[#ffc75a]">{t('suitable_for')}</span>
-                      {t('those_with_basic_engineering_skills')}
+                      <span className="text-[#ffc75a]">{isEn ? 'Suitable for: ' : '适合：'}</span>
+                      {isEn 
+                        ? 'Those with basic engineering skills wanting to master hardcore AI tech stacks'
+                        : '有基本工程能力，希望突破硬核 AI 技术栈的人'
+                      }
                     </p>
                     <p className="mb-2">
-                      <span className="text-[#ffc75a]">{t('youll_master')}</span>
+                      <span className="text-[#ffc75a]">{isEn ? 'You\'ll master:' : '你将掌握：'}</span>
                     </p>
                     <ul className="list-disc list-inside space-y-1 ml-4">
-                      {t('multimodal')}
-                      {t('rag_vector_databases')}
-                      {t('agent_tool_chains')}
-                      {t('react_fastapi_full_stack')}
-                      {t('private_deployment')}
-                      {t('stripe_auto_deployment')}
+                      {isEn ? (
+                        <>
+                          <li>Multimodal (OCR/ASR/YouTube/TikTok API)</li>
+                          <li>RAG, vector databases, knowledge graphs</li>
+                          <li>Agent + tool chains</li>
+                          <li>React + FastAPI full-stack</li>
+                          <li>Private deployment (vLLM/LMStudio)</li>
+                          <li>Stripe, auto-deployment, containerization</li>
+                        </>
+                      ) : (
+                        <>
+                          <li>多模态（OCR/ASR/YouTube/TikTok API）</li>
+                          <li>RAG、向量库、关键词图谱</li>
+                          <li>Agent + 工具链</li>
+                          <li>React + FastAPI 全栈</li>
+                          <li>私有化部署（vLLM/LMStudio）</li>
+                          <li>Stripe、自动部署、容器化</li>
+                        </>
+                      )}
                     </ul>
                     <p className="mt-3">
-                      {t('the_goal_is_a_production_grade_ai_product')}
+                      {isEn 
+                        ? 'The goal is a production-grade AI product that enterprises can use.'
+                        : '目标是一款能被企业使用的生产级 AI 产品。'
+                      }
                     </p>
                   </div>
 
                   <div className="bg-black/30 p-6 rounded-lg border border-[#ffc75a]/20 mt-4">
                     <h4 className="text-white mb-3">
-                      {t('beta_infinity_camp')}
+                      {isEn 
+                        ? 'Beta Infinity Camp — AI Product Founder Leadership Course'
+                        : 'Beta 无界营（Infinity）——AI 产品创始人引领课程'
+                      }
                     </h4>
                     <p className="mb-3">
-                      <span className="text-[#ffc75a]">{t('suitable_for')}</span>
-                      {t('those_with_engineering_background')}
+                      <span className="text-[#ffc75a]">{isEn ? 'Suitable for: ' : '适合：'}</span>
+                      {isEn 
+                        ? 'Those with engineering background, clear goals, wanting to build startup-level products'
+                        : '有工程背景、明确目标，希望打造创业级产品的人'
+                      }
                     </p>
                     <p className="mb-2">
-                      <span className="text-[#ffc75a]">{t('complete_in_12_weeks')}</span>
+                      <span className="text-[#ffc75a]">{isEn ? 'Complete in 12 weeks:' : '12 周完成：'}</span>
                     </p>
                     <ul className="list-disc list-inside space-y-1 ml-4">
-                      {t('llm_environment')}
-                      {t('full_chain_engineering_system')}
-                      {t('product_strategy')}
-                      {t('beta_testing')}
+                      {isEn ? (
+                        <>
+                          <li>LLM environment, data integration, RAG, Agent</li>
+                          <li>Full-chain engineering system</li>
+                          <li>Product strategy, market validation, branding</li>
+                          <li>Beta testing, product launch, pitch presentation</li>
+                        </>
+                      ) : (
+                        <>
+                          <li>大模型环境、数据接入、RAG、Agent</li>
+                          <li>全链条工程体系搭建</li>
+                          <li>产品战略、市场验证、品牌化</li>
+                          <li>Beta 测试、产品发布、演讲路演</li>
+                        </>
+                      )}
                     </ul>
                     <p className="mt-3 mb-2">
-                      <span className="text-[#ffc75a]">{t('outstanding_students_will_also_receive')}</span>
+                      <span className="text-[#ffc75a]">{isEn ? 'Outstanding students will also receive:' : '优秀学员还会得到：'}</span>
                     </p>
                     <ul className="list-disc list-inside space-y-1 ml-4">
-                      {t('founder_recommendation_letter')}
-                      {t('big_tech_ai_company_internship_referrals')}
-                      {t('seed_investment_opportunities')}
+                      {isEn ? (
+                        <>
+                          <li>Founder recommendation letter</li>
+                          <li>Big tech/AI company internship referrals</li>
+                          <li>Seed investment opportunities</li>
+                        </>
+                      ) : (
+                        <>
+                          <li>创始人推荐信</li>
+                          <li>大厂/AI公司实习推荐</li>
+                          <li>种子投资机会</li>
+                        </>
+                      )}
                     </ul>
                   </div>
 
                   <p className="mt-6">
-                    {t('the_three_stage_system_doesnt_follow_a_training_route')}
+                    {isEn 
+                      ? 'The three-stage system doesn\'t follow a "training route," it follows a'
+                      : '三阶体系不走"培训路线"，走的是'
+                    }
                     <span className="text-[#ffc75a]">
-                      {t('product_route')}
+                      {isEn ? '"product route."' : '"产品路线"'}
                     </span>
                     <br />
-                    {t('its_not_about_teaching_you_skills')}
+                    {isEn 
+                      ? 'It\'s not about teaching you skills, but helping you build:'
+                      : '它不是教你技能，而是帮你建立：'
+                    }
                   </p>
 
                   <p className="text-white">
-                    {t('a_complete_capability_loop')}
+                    {isEn 
+                      ? 'A complete capability loop from cognition → engineering → product → market → strategy.'
+                      : '从认知 → 工程 → 产品 → 市场 → 战略 的完整能力闭环。'
+                    }
                   </p>
                 </div>
 
                 {/* Learning Path */}
                 <div className="pt-6 bg-[#ffc75a]/5 p-6 rounded-lg border border-[#ffc75a]/20">
                   <h4 className="text-[#ffc75a] mb-4">
-                    {t('learning_path')}
+                    {isEn ? 'Learning Path:' : '学习路径：'}
                   </h4>
                   <p className="text-white text-center mb-6">
-                    {t('pin_professional_open_course')}
+                    {isEn 
+                      ? 'Pin Professional Open Course → Choose One: BETA Galaxy Camp / BETA Cosmos Camp / BETA Infinity Camp'
+                      : 'Pin 专业公开课 → 三选一：BETA 星空营（Galaxy）/ BETA 深空营（Cosmos）/ BETA 无界营（Infinity）'
+                    }
                   </p>
 
                   <h4 className="text-[#ffc75a] mb-3">
-                    {t('path_recommendations')}
+                    {isEn ? 'Path Recommendations:' : '路径建议：'}
                   </h4>
                   <p className="mb-4">
-                    {t('choose_galaxy_camp')}
-                    {t('choose_cosmos_camp')}
-                    {t('choose_infinity_camp')}
+                    {isEn 
+                      ? 'Choose Galaxy Camp if you have no/low coding experience and want to build real AI products; choose Cosmos Camp if you have a strong engineering foundation and aim for production-level projects; choose Infinity Camp if you have solid academics and 3+ years of intensive engineering experience (requires 1-on-1 interview with the founder).'
+                      : '无/低编码经验且想做出真实AI产品选择星空营；具备较强工程基础且追求生产级项目选择深空营；学术扎实且有3年以上高强度工程经验选择无界营（需通过创始人1v1面试）。'
+                    }
                   </p>
 
                   <p className="text-center text-[#ffc75a]">
-                    {t('for_course_and_instructor_details')}
+                    {isEn 
+                      ? 'For course and instructor details, please consult our staff.'
+                      : '如需课程及导师详情，请向我们工作人员咨询。'
+                    }
                   </p>
                 </div>
 
                 {/* Section 3 */}
                 <div className="pt-6">
                   <h3 className="text-[#ffc75a] mb-4">
-                    {t('why_do_college_students_have_natural_advantages')}
+                    {isEn 
+                      ? '3. Why Do College Students Have Natural Advantages in AI Learning?'
+                      : '3. 为什么大学生在 AI 学习上具备天然优势？'
+                    }
                   </h3>
                   
                   <p>
-                    {t('many_people_mistakenly_think')}
+                    {isEn 
+                      ? 'Many people mistakenly think they started too late.'
+                      : '很多人误以为自己起步晚了。'
+                    }
                     <br />
-                    {t('actually_you_might_be')}
+                    {isEn 
+                      ? 'Actually, you might be at the perfect moment.'
+                      : '其实，你可能正处在最好的节点。'
+                    }
                   </p>
 
                   <p>
-                    {t('weve_observed_that_college_students')}
+                    {isEn 
+                      ? 'We\'ve observed that college students (or those with 1-3 years of work experience) have several key advantages:'
+                      : '我们观察到大学生（或刚工作1-3年的人）有几项关键优势：'
+                    }
                   </p>
 
                   <ul className="list-disc list-inside space-y-2 ml-4">
-                    {t('flexible_thinking')}
-                    {t('still_have_expectations')}
-                    {t('no_career_framework_constraints')}
-                    {t('fast_learning_speed')}
+                    {isEn ? (
+                      <>
+                        <li><span className="text-white">Flexible thinking:</span> Can quickly adapt to the new paradigm of "AI-assisted engineering"</li>
+                        <li><span className="text-white">Still have expectations for the future:</span> Willing to invest time in truly difficult things</li>
+                        <li><span className="text-white">No career framework constraints:</span> Dare to try, dare to overturn, dare to restart</li>
+                        <li><span className="text-white">Fast learning speed:</span> With the right method, building a product in 6 weeks is very realistic</li>
+                      </>
+                    ) : (
+                      <>
+                        <li><span className="text-white">思维尚未固化：</span>能快速接受"AI辅助工程"这种新范式</li>
+                        <li><span className="text-white">对未来仍有期待：</span>愿意投入时间做真正困难的事</li>
+                        <li><span className="text-white">没有职业框架束缚：</span>敢尝试、敢推翻、敢重来</li>
+                        <li><span className="text-white">学习速度快：</span>只要方法正确，6周做出产品十分现实</li>
+                      </>
+                    )}
                   </ul>
 
-                  <p>{t('weve_seen')}</p>
+                  <p>{isEn ? 'We\'ve seen:' : '我们见过：'}</p>
 
                   <ul className="list-disc list-inside space-y-1 ml-4">
-                    {t('first_year_college_students')}
-                    {t('non_cs_majors')}
-                    {t('working_engineers')}
+                    {isEn ? (
+                      <>
+                        <li>First-year college students building Agent applications with thousands of users</li>
+                        <li>Non-CS majors creating fully functional multimodal AI websites</li>
+                        <li>Working engineers completing the startup MVP they\'d been putting off for two years</li>
+                      </>
+                    ) : (
+                      <>
+                        <li>刚读大学一年级就做出 Agent 应用并获上千用户的人</li>
+                        <li>非计算机专业却做出功能完整的多模态 AI 网站</li>
+                        <li>在职工程师完成了自己拖延两年的创业 MVP</li>
+                      </>
+                    )}
                   </ul>
 
                   <p className="text-white">
-                    {t('theyre_not_geniuses')}
+                    {isEn 
+                      ? 'They\'re not geniuses, they just gave themselves an outlet to enter real-world practice.'
+                      : '他们并不是天才，只是给自己一个进入实战的出口。'
+                    }
                   </p>
                 </div>
 
                 {/* Section 4 */}
                 <div className="pt-6">
                   <h3 className="text-[#ffc75a] mb-4">
-                    {t('how_beta_differs_from_traditional_engineering_learning')}
+                    {isEn 
+                      ? '4. How BETA Differs from Traditional Engineering Learning'
+                      : '4. BETA 与传统工程学习的差异'
+                    }
                   </h3>
                   
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="bg-zinc-800/50 p-5 rounded-lg">
                       <p className="text-white mb-2">
-                        {t('traditional_route')}
+                        {isEn ? 'Traditional route:' : '传统路线：'}
                       </p>
                       <p className="text-sm">
-                        {t('syntax_framework_project_template')}
+                        {isEn 
+                          ? 'Syntax → Framework → Project template → Future later'
+                          : '语法 → 框架 → 项目模板 → 未来再说'
+                        }
                       </p>
                       <p className="text-sm text-gray-500 mt-2">
-                        {t('process_is_boring')}
+                        {isEn 
+                          ? 'Process is boring, results are limited.'
+                          : '过程枯燥，结果有限。'
+                        }
                       </p>
                     </div>
                     <div className="bg-[#ffc75a]/10 p-5 rounded-lg border border-[#ffc75a]/30">
                       <p className="text-[#ffc75a] mb-2">
-                        {t('beta_route')}
+                        {isEn ? 'BETA route:' : 'BETA 的路线：'}
                       </p>
                       <p className="text-sm">
-                        {t('questions_product_engineering')}
+                        {isEn 
+                          ? 'Questions → Product → Engineering → Market → Launch'
+                          : '提问 → 产品 → 工程 → 市场 → 上线'
+                        }
                       </p>
                       <p className="text-sm text-gray-400 mt-2">
-                        {t('every_step_points_to_an_outcome')}
+                        {isEn 
+                          ? 'Every step points to an outcome: building real products.'
+                          : '每一步都指向一个成果：做出真实产品。'
+                        }
                       </p>
                     </div>
                   </div>
 
                   <p className="mt-6">
-                    {t('our_underlying_design_is_simple')}
+                    {isEn 
+                      ? 'Our underlying design is simple:'
+                      : '我们的底层设计很简单：'
+                    }
                   </p>
 
                   <ul className="list-disc list-inside space-y-2 ml-4">
-                    {t('framework_over_code')}
-                    {t('product_before_engineering')}
-                    {t('aesthetics_over_manufacturing')}
-                    {t('feedback_over_features')}
-                    {t('questions_above_all')}
+                    {isEn ? (
+                      <>
+                        <li><span className="text-[#ffc75a]">Framework over code:</span> Knowing how to write code isn't enough, you need to drive AI to write</li>
+                        <li><span className="text-[#ffc75a]">Product before engineering:</span> You're not doing homework, you're building a "product"</li>
+                        <li><span className="text-[#ffc75a]">Aesthetics over manufacturing:</span> Your product's taste will determine its fate</li>
+                        <li><span className="text-[#ffc75a]">Feedback over features:</span> Launch is more important than perfect, market is more important than teacher</li>
+                        <li><span className="text-[#ffc75a]">Questions above all:</span> All capabilities start and are driven by questioning</li>
+                      </>
+                    ) : (
+                      <>
+                        <li><span className="text-[#ffc75a]">框架重于代码：</span>会写代码不够，你要能驱动 AI 写</li>
+                        <li><span className="text-[#ffc75a]">产品先于工程：</span>你不是在做课程作业，而是在做"产品"</li>
+                        <li><span className="text-[#ffc75a]">审美优于制造：</span>你作品的品味，会决定它的命运</li>
+                        <li><span className="text-[#ffc75a]">反馈大于功能：</span>上线比完美重要，市场比老师重要</li>
+                        <li><span className="text-[#ffc75a]">提问高于一切：</span>所有能力从提问开始，也被提问驱动</li>
+                      </>
+                    )}
                   </ul>
 
                   <p className="text-white">
-                    {t('this_is_the_real_logic')}
+                    {isEn 
+                      ? 'This is the real logic of business and the true need of the era.'
+                      : '这是企业的真实逻辑，也是时代真正的需求。'
+                    }
                   </p>
                 </div>
 
                 {/* Section 5 */}
                 <div className="pt-6">
                   <h3 className="text-[#ffc75a] mb-4">
-                    {t('the_challenge_is_real')}
+                    {isEn 
+                      ? '5. The Challenge is Real, But Support is Complete'
+                      : '5. 挑战是真实的，但支持也是完整的'
+                    }
                   </h3>
                   
                   <p>
-                    {t('i_wont_tell_you')}
+                    {isEn 
+                      ? 'I won\'t tell you this course is easy.'
+                      : '我不会告诉你这门课很轻松。'
+                    }
                     <br />
                     <span className="text-white">
-                      {t('saying_its_easy')}
+                      {isEn 
+                        ? 'Saying it\'s easy would be disrespectful to you.'
+                        : '说轻松是对你的不尊重。'
+                      }
                     </span>
                   </p>
 
                   <p>
-                    {t('but_i_can_guarantee')}
+                    {isEn 
+                      ? 'But I can guarantee:'
+                      : '但我可以保证：'
+                    }
                     <span className="text-[#ffc75a]">
-                      {t('you_wont_face_difficulties_alone')}
+                      {isEn 
+                        ? ' You won\'t face difficulties alone.'
+                        : '你不会独自面对困境。'
+                      }
                     </span>
                   </p>
 
-                  <p>{t('we_provide')}</p>
+                  <p>{isEn ? 'We provide:' : '我们提供：'}</p>
 
                   <ul className="list-disc list-inside space-y-2 ml-4">
-                    {t('hands_on_teaching')}
-                    {t('weekly_fixed_qa_sessions')}
-                    {t('camp_leader_led_assignment_reviews')}
-                    {t('engineer_mentorship')}
-                    {t('ai_toolchains')}
-                    {t('complete_deployment')}
-                    {t('real_demo_days')}
+                    {isEn ? (
+                      <>
+                        <li>Hands-on teaching from frontline engineers</li>
+                        <li>Weekly fixed Q&A sessions</li>
+                        <li>Camp leader-led assignment reviews</li>
+                        <li>Engineer mentorship</li>
+                        <li>AI toolchains & 400+ API resources</li>
+                        <li>Complete deployment, launch, and marketing guidance</li>
+                        <li>Real Demo Days, real user feedback</li>
+                      </>
+                    ) : (
+                      <>
+                        <li>来自一线工程师的实战教学</li>
+                        <li>每周固定答疑</li>
+                        <li>营长带队的作业检查</li>
+                        <li>工程师陪练</li>
+                        <li>AI 工具链与 400+ API 资源</li>
+                        <li>完整部署、发布、营销指导</li>
+                        <li>真实 Demo Day、真实用户反馈</li>
+                      </>
+                    )}
                   </ul>
 
                   <p>
-                    {t('our_goal_isnt_to_make_you')}
+                    {isEn 
+                      ? 'Our goal isn\'t to make you'
+                      : '我们的目标不是让你'
+                    }
                     <span className="text-gray-500">
-                      {t('learn')}
+                      {isEn ? '"learn,"' : '"学会"'}
                     </span>
                     <br />
-                    {t('but_to_actually_make_you')}
+                    {isEn 
+                      ? 'But to actually make you'
+                      : '而是让你真实地'
+                    }
                     <span className="text-[#ffc75a]">
-                      {t('build')}
+                      {isEn ? '"build."' : '「做出」'}
                     </span>
-                    {t('')}
+                    {isEn ? '' : '。'}
                   </p>
                 </div>
 
                 {/* Section 6 */}
                 <div className="pt-6">
                   <h3 className="text-[#ffc75a] mb-4">
-                    {t('value_for_your_career')}
+                    {isEn 
+                      ? '6. Value for Your Career and Future Development'
+                      : '6. 对你的职业与未来发展的价值'
+                    }
                   </h3>
                   
                   <p>
-                    {t('by_participating_in_the_beta_system')}
+                    {isEn 
+                      ? 'By participating in the BETA system, you\'ll gain:'
+                      : '参加 BETA 体系，你将获得：'
+                    }
                   </p>
 
                   <div className="space-y-4 mt-4">
                     <div className="bg-black/30 p-4 rounded-lg border-l-4 border-[#ffc75a]">
                       <p className="text-white mb-2">
-                        {t('academic_career_competitiveness')}
+                        {isEn 
+                          ? 'Academic / Career Competitiveness'
+                          : '升学 / 工作竞争力'
+                        }
                       </p>
                       <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                        {t('a_real_launched_product_portfolio')}
-                        {t('engineer_and_founder_endorsement')}
-                        {t('mastery_of_llms')}
-                        {t('real_team_collaboration_experience')}
+                        {isEn ? (
+                          <>
+                            <li>A real launched product portfolio</li>
+                            <li>Engineer and founder endorsement</li>
+                            <li>Mastery of LLMs, RAG, Agents</li>
+                            <li>Real team collaboration experience</li>
+                          </>
+                        ) : (
+                          <>
+                            <li>一款真实上线的产品作品集</li>
+                            <li>工程师与创始人背书</li>
+                            <li>对大模型、RAG、Agent 的掌握</li>
+                            <li>真实团队协作经验</li>
+                          </>
+                        )}
                       </ul>
                     </div>
 
                     <div className="bg-black/30 p-4 rounded-lg border-l-4 border-[#ffc75a]">
                       <p className="text-white mb-2">
-                        {t('skill_enhancement')}
+                        {isEn ? 'Skill Enhancement' : '技能提升'}
                       </p>
                       <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                        {t('full_chain_ai_engineering_capabilities')}
-                        {t('product_breakdown_and_market_validation')}
-                        {t('multimodal_private_deployment')}
+                        {isEn ? (
+                          <>
+                            <li>Full-chain AI engineering capabilities</li>
+                            <li>Product breakdown and market validation</li>
+                            <li>Multimodal, private deployment, containerization</li>
+                          </>
+                        ) : (
+                          <>
+                            <li>全链条 AI 工程能力</li>
+                            <li>产品拆解与市场验证</li>
+                            <li>多模态、私有化部署、容器化</li>
+                          </>
+                        )}
                       </ul>
                     </div>
 
                     <div className="bg-black/30 p-4 rounded-lg border-l-4 border-[#ffc75a]">
                       <p className="text-white mb-2">
-                        {t('career_direction_judgment')}
+                        {isEn ? 'Career Direction Judgment' : '职业方向判断力'}
                       </p>
                       <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
-                        {t('should_i_pursue_engineering')}
-                        {t('am_i_suited_for_entrepreneurship')}
-                        {t('can_i_build_better_products')}
+                        {isEn ? (
+                          <>
+                            <li>Should I pursue engineering?</li>
+                            <li>Am I suited for entrepreneurship?</li>
+                            <li>Can I build better products?</li>
+                          </>
+                        ) : (
+                          <>
+                            <li>是否要走工程？</li>
+                            <li>是否适合创业？</li>
+                            <li>是否能做更好的产品？</li>
+                          </>
+                        )}
                       </ul>
                       <p className="text-sm text-gray-400 mt-2">
-                        {t('practice_will_give_you_answers')}
+                        {isEn ? 'Practice will give you answers.' : '实践会给你答案。'}
                       </p>
                     </div>
                   </div>
@@ -465,70 +761,112 @@ export function CEOLetterPage() {
                 {/* Section 7 */}
                 <div className="pt-6">
                   <h3 className="text-[#ffc75a] mb-4">
-                    {t('if_you_decide_to_join')}
+                    {isEn 
+                      ? '7. If You Decide to Join, Here\'s My Advice'
+                      : '7. 如果你决定加入，这是我给你的建议'
+                    }
                   </h3>
                   
                   <ul className="list-disc list-inside space-y-2 ml-4">
-                    {t('dont_fear_difficulty')}
-                    {t('go_all_in')}
-                    {t('write_down_every_confusion')}
-                    {t('give_up_perfectionism')}
-                    {t('allow_yourself_to_fail')}
+                    {isEn ? (
+                      <>
+                        <li><span className="text-white">Don't fear difficulty</span> — Real growth is never easy</li>
+                        <li><span className="text-white">Go all in</span> — The AI era belongs to those with high execution density</li>
+                        <li><span className="text-white">Write down every confusion</span> — Questions are your weapon</li>
+                        <li><span className="text-white">Give up "perfectionism"</span> — Launch first, optimize later</li>
+                        <li><span className="text-white">Allow yourself to fail</span> — Failure is part of building products, not a problem with you</li>
+                      </>
+                    ) : (
+                      <>
+                        <li><span className="text-white">不要害怕难度</span>——真实的成长从不轻松</li>
+                        <li><span className="text-white">尽量全力投入</span>——AI时代属于执行密度高的人</li>
+                        <li><span className="text-white">把每一次困惑写下来</span>——提问是你的武器</li>
+                        <li><span className="text-white">放弃"完美主义"</span>——先上线，再优化</li>
+                        <li><span className="text-white">允许自己失败</span>——失败是产品的日常，不是你的问题</li>
+                      </>
+                    )}
                   </ul>
 
                   <p className="text-white mt-4">
-                    {t('your_goal_isnt_to_complete_homework')}
+                    {isEn 
+                      ? 'Your goal isn\'t to "complete homework,"'
+                      : '你的目标不是"完成作业"，'
+                    }
                     <br />
-                    {t('but_to_become_someone')}
+                    {isEn 
+                      ? 'But to become someone who can independently build real AI products.'
+                      : '而是成为能凭自己做出真实 AI 产品的人。'
+                    }
                   </p>
                 </div>
 
                 {/* Final words */}
                 <div className="pt-6">
                   <h3 className="text-[#ffc75a] mb-4">
-                    {t('final_words')}
+                    {isEn ? 'Final Words' : '最后的话'}
                   </h3>
                   
                   <p>
-                    {t('in_the_wave_of_the_ai_era')}
+                    {isEn 
+                      ? 'In the wave of the AI era, you may not have realized one thing:'
+                      : '在 AI 的时代浪潮里，你可能还没意识到一件事：'
+                    }
                   </p>
 
                   <p className="text-white text-lg">
-                    {t('people_who_can_turn_ai_into_products')}
+                    {isEn 
+                      ? 'People who can turn AI into products will become the most scarce in this era.'
+                      : '能把 AI 变成产品的人，会成为这个时代最稀缺的人。'
+                    }
                   </p>
 
                   <p>
-                    {t('this_is_the_fundamental_reason')}
+                    {isEn 
+                      ? 'This is the fundamental reason we founded BEE BETA.'
+                      : '这也是我们创办 BEE BETA 的根本原因。'
+                    }
                   </p>
 
                   <p>
-                    {t('if_youre_willing')}
+                    {isEn 
+                      ? 'If you\'re willing, we\'ll accompany you:'
+                      : '如果你愿意，我们会和你一起：'
+                    }
                     <br />
-                    {t('from_questioning')}
+                    {isEn 
+                      ? 'From questioning, to creating, to validating, to launching,'
+                      : '从提问、到创造、到验证、到发布，'
+                    }
                     <br />
-                    {t('walking_through_the_first_stage')}
+                    {isEn 
+                      ? 'Walking through the first stage of the real world.'
+                      : '走完真实世界的第一段路。'
+                    }
                   </p>
 
                   <p className="text-[#ffc75a]">
-                    {t('looking_forward_to_meeting_you')}
+                    {isEn 
+                      ? 'Looking forward to meeting you in BETA.'
+                      : '期待在 BETA 与你相遇。'
+                    }
                   </p>
                 </div>
 
                 <div className="pt-8 border-t border-[#ffc75a]/20 mt-8">
                   <p className="text-white mb-6">
-                    {t('sincerely')}
+                    {isEn ? 'Sincerely,' : '诚挚的，'}
                   </p>
                   <p className="text-gray-500 text-sm mb-6">
-                    {t('october_2025')}
+                    {isEn ? 'October 2025' : '2025年10月'}
                   </p>
                   <p className="text-white mb-1">
-                    {t('pin_zhou')}
+                    {isEn ? 'Pin Zhou' : 'Pin Zhou 周品'}
                   </p>
                   <p className="text-gray-500 text-sm">
-                    {t('founder_of_bebee_ai')}
+                    {isEn ? 'Founder of BEEBEE AI' : 'BEEBEE AI 创始人'}
                   </p>
                   <p className="text-gray-500 text-sm">
-                    {t('initiator_of_be_beta_program')}
+                    {isEn ? 'Initiator of BEE BETA Program' : 'BEE BETA 项目发起人'}
                   </p>
                 </div>
               </div>
@@ -537,16 +875,19 @@ export function CEOLetterPage() {
             {/* Quote Highlight */}
             <div className="mt-12 p-6 bg-[#ffc75a]/5 border-l-4 border-[#ffc75a] rounded">
               <p className="text-gray-400 italic">
-                {t('people_who_can_turn_ai_into_products')}
+                {isEn 
+                  ? '"People who can turn AI into products will become the most scarce in this era."'
+                  : '"能把 AI 变成产品的人，会成为这个时代最稀缺的人。"'
+                }
               </p>
-              <p className="text-[#ffc75a] text-sm mt-2">— {t('pin_zhou')}</p>
+              <p className="text-[#ffc75a] text-sm mt-2">— {isEn ? 'Pin Zhou' : 'Pin Zhou 周品'}</p>
             </div>
 
             {/* CTA */}
             <div className="mt-12 text-center">
               <Link to="/">
                 <Button className="bg-[#ffc75a] hover:bg-[#ffc75a]/90 text-black">
-                  {t('back_to_home')}
+                  {isEn ? 'Back to Home' : '返回首页'}
                 </Button>
               </Link>
             </div>
@@ -558,7 +899,10 @@ export function CEOLetterPage() {
       <footer className="border-t border-[#ffc75a]/20 py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-center text-gray-500 text-sm">
-            {t('copyright')}
+            {isEn 
+              ? '© 2025 Bee Beta. All rights reserved. Learn AI, Shape the Future.'
+              : '© 2025 Bee Beta. 保留所有权利。学习AI，塑造未来。'
+            }
           </p>
         </div>
       </footer>

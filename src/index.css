@@ -479,6 +479,10 @@
     pointer-events: none;
   }
 
+  .invisible {
+    visibility: hidden;
+  }
+
   .sr-only {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
@@ -899,6 +903,10 @@
 
   .h-\[200px\] {
     height: 200px;
+  }
+
+  .h-\[340px\] {
+    height: 340px;
   }
 
   .h-\[500px\] {
@@ -1682,6 +1690,16 @@
 
   .bg-zinc-900 {
     background-color: var(--color-zinc-900);
+  }
+
+  .bg-zinc-900\/30 {
+    background-color: color-mix(in srgb, oklch(.21 .006 285.885) 30%, transparent);
+  }
+
+  @supports (color: color-mix(in lab, red, red)) {
+    .bg-zinc-900\/30 {
+      background-color: color-mix(in oklab, var(--color-zinc-900) 30%, transparent);
+    }
   }
 
   .bg-zinc-900\/80 {
@@ -2563,6 +2581,10 @@
     scrollbar-width: none;
   }
 
+  .running {
+    animation-play-state: running;
+  }
+
   @media (hover: hover) {
     .group-hover\:scale-100:is(:where(.group):hover *) {
       --tw-scale-x: 100%;
@@ -3264,6 +3286,12 @@
   @media (width >= 64rem) {
     .lg\:h-\[240px\] {
       height: 240px;
+    }
+  }
+
+  @media (width >= 64rem) {
+    .lg\:h-\[345px\] {
+      height: 345px;
     }
   }
 
