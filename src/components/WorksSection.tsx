@@ -2,7 +2,7 @@ import { ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import propertyAIImage from 'figma:asset/6787fa0de23eb02d687942fe18f343ee6e75f4dd.png';
-import rowingProImage from 'figma:asset/b8866a0d7bc68a8b458662d05c86481e4f56d2d2.png';
+import rowingProImage from 'figma:asset/5a5bfaced6e5b63efdafd784299e4387a19e11cc.png';
 import climateHubImage from 'figma:asset/68912bf7abbc475a04c44c40c4d0de5e49f23b64.png';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../locales/translations';

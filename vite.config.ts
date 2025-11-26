@@ -4,7 +4,6 @@
   import path from 'path';
 
   export default defineConfig({
-    base: '/Beebeta/',
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
@@ -18,9 +17,9 @@
         'next-themes@0.4.6': 'next-themes',
         'lucide-react@0.487.0': 'lucide-react',
         'input-otp@1.4.2': 'input-otp',
-        'figma:asset/b8866a0d7bc68a8b458662d05c86481e4f56d2d2.png': path.resolve(__dirname, './src/assets/b8866a0d7bc68a8b458662d05c86481e4f56d2d2.png'),
         'figma:asset/68912bf7abbc475a04c44c40c4d0de5e49f23b64.png': path.resolve(__dirname, './src/assets/68912bf7abbc475a04c44c40c4d0de5e49f23b64.png'),
         'figma:asset/6787fa0de23eb02d687942fe18f343ee6e75f4dd.png': path.resolve(__dirname, './src/assets/6787fa0de23eb02d687942fe18f343ee6e75f4dd.png'),
+        'figma:asset/5a5bfaced6e5b63efdafd784299e4387a19e11cc.png': path.resolve(__dirname, './src/assets/5a5bfaced6e5b63efdafd784299e4387a19e11cc.png'),
         'figma:asset/4a695bbf97b9780e60c6ef02d5310c6e0f483f44.png': path.resolve(__dirname, './src/assets/4a695bbf97b9780e60c6ef02d5310c6e0f483f44.png'),
         'figma:asset/48e07d5066d10d3e10ffa694aff6e7e6ed8ac420.png': path.resolve(__dirname, './src/assets/48e07d5066d10d3e10ffa694aff6e7e6ed8ac420.png'),
         'embla-carousel-react@8.6.0': 'embla-carousel-react',
@@ -57,7 +56,7 @@
     },
     build: {
       target: 'esnext',
-      outDir: 'dist',
+      outDir: 'build',
     },
     server: {
       port: 3000,
