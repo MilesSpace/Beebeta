@@ -1,11 +1,13 @@
 import { ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import propertyAIImage from 'figma:asset/6787fa0de23eb02d687942fe18f343ee6e75f4dd.png';
-import rowingProImage from 'figma:asset/5a5bfaced6e5b63efdafd784299e4387a19e11cc.png';
-import climateHubImage from 'figma:asset/68912bf7abbc475a04c44c40c4d0de5e49f23b64.png';
 import { useLanguage } from '../contexts/LanguageContext';
 import { translations } from '../locales/translations';
+
+// 学员作品图片 - 使用网络链接
+const propertyAIImage = 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/ops/propertyAIImage.jpg';
+const rowingProImage = 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/ops/rowingProImage.jpg';
+const climateHubImage = 'https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/ops/climateHubImage.jpg';
 
 export function WorksSection() {
   const { language } = useLanguage();
