@@ -37,7 +37,7 @@ export const translations = {
       mode1: {
         title: "AI驱动课程",
         description:
-          "每周2次课：两次均为理论+实践课程，可根据假期时间灵活安排",
+          "每周课程融合理论与实践，可根据假期灵活安排",
       },
       mode2: {
         title: "实战项目导向",
@@ -116,7 +116,7 @@ export const translations = {
         subtitle: "",
         ageLimit: "18岁以上大学生/研究生/博士生",
         suitableFor:
-          "想用 AI 从零做出能上线的完整产品，强化作品集，用于实习申请、求职提升，或快速验证创业想法的学员",
+          "从零做出能上线的完整产品，强化作品集，用于实习申请、求职提升或验证创业想法",
         duration:
           "6 周课程：每周 1 次 1.5 小时主课（2 门产品课、4 门工程课）与 1 次作业检查；工程课当周另提供 1 小时直播答疑",
         requirements:
@@ -136,7 +136,7 @@ export const translations = {
         subtitle: "",
         ageLimit: "18岁以上大学生/在职工程师/创业者",
         suitableFor:
-          "想挑战更高难度，用 AI 打造生产级、具备商业潜力的项目，并用于大厂转岗、PhD申请或创业MVP的学员",
+          "打造生产级、具备商业潜力的项目，用于大厂转岗、PhD申请或创业MVP",
         duration:
           "8 周课程：每周 2 次 1.5 小时主课与 1 次作业检查；每周另提供 1 小时集中直播答疑。",
         requirements:
@@ -158,11 +158,11 @@ export const translations = {
         subtitle: "",
         ageLimit: "18岁以上大学生/在职工程师/创业者",
         suitableFor:
-          "有技术基础，想提升 AI 工程与产品能力，在真实市场与专家指导下完成可用于求职、深造或创业的生产级产品的学员",
+          "提升AI工程与产品能力，在市场与专家指导下完成可用于求职或创业的生产级产品",
         duration:
           "12周课程：每周 1 次 1.5 小时主课与 1 次作业检查；每周另提供 1 小时集中直播答疑",
         requirements:
-          "逻辑清楚，具备扎实学术或工程基础，有独立规划并推动项目落地的能力；需通过创始人或同级行业专家的 1v1 面试",
+          "扎实的学术与工程经验，能独立规划并推动项目；通过创始人 1v1 面试",
         content: [
           "大模型环境与框架部署",
           "多模态数据接入与工程环境",
@@ -929,7 +929,7 @@ export const translations = {
       mode1: {
         title: "AI-Driven Courses",
         description:
-          "2 sessions per week: both theory + practice courses, flexible scheduling for holidays",
+          "Weekly courses blend theory and practice, flexible scheduling for holidays",
       },
       mode2: {
         title: "Project-Oriented Learning",
@@ -1011,7 +1011,7 @@ export const translations = {
         title: "BETA 星空营 (Galaxy)",
         subtitle: "",
         ageLimit: "18岁以上大学生/研究生/博士生",
-        suitableFor: "Students with no/low coding experience",
+        suitableFor: "Build complete products from scratch to strengthen portfolio for internships, job seeking or startup validation",
         duration: "6 weeks (1 session/week, 1.5 hours each)",
         requirements: "Clear logic, STEM background preferred",
         content: [
@@ -1030,7 +1030,7 @@ export const translations = {
         subtitle: "",
         ageLimit: "18岁以上大学生/在职工程师/创业者",
         suitableFor:
-          "Students with programming experience wanting to deepen AI knowledge",
+          "Build production-grade projects with commercial potential for career advancement, PhD applications or startup MVP",
         duration: "8 weeks (2 sessions/week, 1.5 hours each)",
         requirements:
           "Programming ability, clear language and mathematical logic",
@@ -1051,10 +1051,10 @@ export const translations = {
         subtitle: "",
         ageLimit: "18岁以上大学生/在职工程师/创业者",
         suitableFor:
-          "Students with AI project experience pursuing excellence",
+          "Enhance AI engineering and product skills to complete production-grade products for career, further education or entrepreneurship",
         duration: "12 weeks (1 session/week, 1.5 hours each)",
         requirements:
-          "Solid academic or engineering background, ability to independently plan and implement projects",
+          "Solid academic or engineering background, capable of independent project execution; founder 1v1 interview required",
         content: [
           "LLM Environment & Framework Deployment",
           "Multimodal Data Integration",

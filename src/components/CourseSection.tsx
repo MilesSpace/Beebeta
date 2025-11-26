@@ -154,14 +154,14 @@ export function CourseSection() {
 
         <div 
           className="mx-4 lg:mx-6 -mt-4 mb-6 bg-zinc-900/80 rounded-2xl p-4 lg:p-6 shadow-lg relative z-10 flex items-start"
-          style={{ border: `1px solid ${course.color}30`, minHeight: '240px' }}
+          style={{ border: `1px solid ${course.color}30` }}
         >
           <div className="space-y-3 lg:space-y-4">
-            <div>
+            <div className="leading-relaxed">
               <span className="text-white text-sm lg:text-base">{t.courses.labels.duration}: </span>
               <span className="text-gray-400 text-sm lg:text-base">{course.duration}</span>
             </div>
-            <div>
+            <div className="leading-relaxed">
               <span className="text-white text-sm lg:text-base">{t.courses.labels.requirements}: </span>
               <span className="text-gray-400 text-sm lg:text-base">{course.requirements}</span>
             </div>
@@ -287,7 +287,7 @@ export function CourseSection() {
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8" style={{ lineHeight: '1.6' }}>
                 {advancedCourses.map((course, index) => (
                   <div key={index} className="relative">
                     {renderCourseCard(course, index + 1)}

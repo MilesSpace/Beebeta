@@ -18,7 +18,7 @@ export function AboutSection() {
           </div>
           
           <div className="bg-zinc-900 rounded-lg p-8 lg:p-12 border border-[#ffc75a]/10">
-            <div className="space-y-6 text-gray-300 leading-relaxed">
+            <div className="space-y-8 text-gray-300 leading-loose">
               <p>
                 {t.about.companyIntro.paragraph1}
               </p>

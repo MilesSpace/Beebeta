@@ -33,7 +33,6 @@ export function HomePage() {
           subtitle={t.features.subtitle}
         />
         <FeaturesSection />
-        <StatsSection />
         
         {/* 第二章：完整课程体系 */}
         <SectionDivider 
@@ -54,6 +53,7 @@ export function HomePage() {
           subtitle={t.advancedCoursesSection.description}
         />
         <AdvancedCoursesSection />
+        <StatsSection />
         
         {/* 第四章：学员作品展示 */}
         <SectionDivider 
