@@ -34,6 +34,9 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: List build files
+        run: ls -la dist || echo "Build directory check"
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
