@@ -1,5 +1,4 @@
 import { Globe, Award, Brain, GraduationCap, Briefcase, Quote, Users } from 'lucide-react';
-import ceoImage from 'figma:asset/48e07d5066d10d3e10ffa694aff6e7e6ed8ac420.png';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export function AboutSection() {
