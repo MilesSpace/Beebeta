@@ -8,7 +8,7 @@ const alanImg = `${BASE_URL}/alan.png`;
 const claireImg = `${BASE_URL}/jin.jpg`;
 
 // 项目导师 (Pacer)
-const pinImg = `${BASE_URL}/pin.jpg`;
+const pinImg = `${BASE_URL}/pin.png`;
 const hImg = `${BASE_URL}/H.jpg`;
 const cImg = `${BASE_URL}/Chi.png`;
 const vitoImg = `${BASE_URL}/Vito.jpg`;
