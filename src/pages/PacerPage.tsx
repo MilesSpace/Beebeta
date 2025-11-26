@@ -1,80 +1,16 @@
-import { useNavigate } from "react-router-dom";
-import { ArrowLeft, Globe, Award, Briefcase, GraduationCap, Users, ChevronDown, ChevronUp } from "lucide-react";
-import { useLanguage } from "../contexts/LanguageContext";
-import { pacerMentors, MentorData } from "../data/pacerData";
-import { expertMentors, ExpertData } from "../data/prosData";
-import { operationsMentors, OperationsMentorData } from "../data/OperationsManagement";
-import { useEffect, useState, useRef } from "react";
-import pacerImages from "../img/pacer";
-
-// 懒加载卡片包装组件
-function LazyCard({ 
-  children, 
-  cardId,
-  forceLoad = false
-}: { 
-  children: React.ReactNode; 
-  cardId: string;
-  forceLoad?: boolean;
-}) {
-  const [isVisible, setIsVisible] = useState(forceLoad);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (forceLoad) {
-      setIsVisible(true);
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          // 一旦可见就停止观察
-          if (ref.current) {
-            observer.unobserve(ref.current);
-          }
-        }
-      },
-      {
-        rootMargin: "200px", // 提前200px开始加载
-        threshold: 0.01,
-      }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, [forceLoad]);
-
-  return (
-    <div ref={ref}>
-      {isVisible ? (
-        children
-      ) : (
-        // 占位符 - 保持布局稳定
-        <div className="w-full h-[340px] lg:h-[345px] bg-zinc-900/30 rounded-2xl border-2 border-[#ffc75a]/10 animate-pulse"></div>
-      )}
-    </div>
-  );
-}
+import { useState, useRef, useEffect } from 'react';
+import { ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Button } from '../components/ui/button';
+import { useLanguage } from '../contexts/LanguageContext';
+import { pacerProfiles } from '../data/pacerData';
 
 export function PacerPage() {
-  const navigate = useNavigate();
-  const { language, setLanguage } = useLanguage();
-  const [flippedCardId, setFlippedCardId] = useState<string | null>(null);
-  const [forceLoadedCards, setForceLoadedCards] = useState<Set<string>>(new Set());
-  
-  // 折叠状态 - 默认只展开项目导师
-  const [isProjectCollapsed, setIsProjectCollapsed] = useState(false);
-  const [isExpertCollapsed, setIsExpertCollapsed] = useState(true);
-  const [isOperationsCollapsed, setIsOperationsCollapsed] = useState(true);
+  const { language } = useLanguage();
+
+  useEffect(() => {
+    document.title = 'Bee-Beta - Pacer';
+  }, []);
 
   const isEnglish = language === "en";
 
@@ -423,13 +359,13 @@ export function PacerPage() {
       <div className="fixed top-0 left-0 right-0 z-[100] bg-black/95 border-b border-white/10">
         <div className="flex items-center justify-between px-5 py-4">
           {/* 返回按钮 */}
-          <button
-            onClick={() => navigate("/")}
+          <Link
+            to="/"
             className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 rounded-lg transition-colors border border-white/20"
           >
             <ArrowLeft className="w-5 h-5" />
             <span>{isEnglish ? "Back to Home" : "返回首页"}</span>
-          </button>
+          </Link>
 
           {/* 中英文切换 - 参照首页样式 */}
           <button

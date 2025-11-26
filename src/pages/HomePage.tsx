@@ -14,9 +14,14 @@ import { ContactSection } from '../components/ContactSection';
 import { Footer } from '../components/Footer';
 import { SectionDivider } from '../components/SectionDivider';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useEffect } from 'react';
 
 export function HomePage() {
   const { t } = useLanguage();
+  
+  useEffect(() => {
+    document.title = 'Bee-Beta';
+  }, []);
   
   return (
     <div className="min-h-screen bg-black">

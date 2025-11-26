@@ -46,7 +46,7 @@ export function AboutSection() {
             <div className="mb-8">
               <div className="flex items-center gap-4 mb-6">
                 <img
-                  src={ceoImage}
+                  src="https://beebee-s3-sit.s3.us-west-2.amazonaws.com/bee-beta/pacer/pin.png"
                   alt={t.about.founder.name}
                   className="w-32 h-32 rounded-full object-cover border-2 border-[#ffc75a]/30"
                 />
