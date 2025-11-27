@@ -32,7 +32,8 @@ jobs:
         run: npm install
 
       - name: Update vite.config.ts for deployment
-        run: sed -i "s/outDir: 'build'/outDir: 'dist'/g" vite.config.ts
+        run: |
+          sed -i "s/outDir: 'build'/outDir: 'dist'/g" vite.config.ts
 
       - name: Build
         run: npm run build
