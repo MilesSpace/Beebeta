@@ -6,6 +6,7 @@ export function InfinityValuesSection() {
   const { language } = useLanguage();
   const t = translations[language];
   const infinityValues = t.courses.infinityValues;
+  const isEn = language === 'en';
 
   const values = [
     {
@@ -61,17 +62,14 @@ export function InfinityValuesSection() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 -mt-8 lg:-mt-12">
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-16 lg:mb-20">
-          <div className="inline-flex items-center gap-2 mb-6 px-5 py-2 rounded-full bg-gradient-to-r from-[#ffc75a]/10 via-[#ffc75a]/20 to-[#ffc75a]/10 border border-[#ffc75a]/30">
-            <Sparkles className="w-4 h-4 text-[#ffc75a]" />
-            <span className="text-[#ffc75a] text-sm font-semibold tracking-wider">
-              BETA 无界营（INFINITY）
+          <div className="inline-flex items-center gap-3 mb-8 px-6 py-3 rounded-full bg-gradient-to-r from-[#ffc75a]/10 via-[#ffc75a]/20 to-[#ffc75a]/10 border border-[#ffc75a]/30">
+            <span className="text-[#ffc75a] font-semibold tracking-wider">
+              {isEn 
+                ? 'BETA INFINITY CAMP — Unique Value'
+                : 'BETA 无界营（INFINITY）— 独特价值'
+              }
             </span>
-            <Sparkles className="w-4 h-4 text-[#ffc75a]" />
           </div>
-          
-          <h2 className="text-2xl lg:text-3xl text-white mb-6 font-bold">
-            {infinityValues.title}
-          </h2>
           
           <p className="text-gray-400 text-base lg:text-lg leading-relaxed">
             {infinityValues.subtitle}
@@ -105,7 +103,7 @@ export function InfinityValuesSection() {
                   {/* Large Number */}
                   <div className="relative">
                     <span 
-                      className="text-6xl lg:text-7xl font-bold opacity-30 group-hover:opacity-50 transition-opacity"
+                      className="text-6xl lg:text-7xl font-bold opacity-50 group-hover:opacity-70 transition-opacity"
                       style={{ color: value.accentColor }}
                     >
                       {value.number}
@@ -128,23 +126,23 @@ export function InfinityValuesSection() {
                 {/* Content Side */}
                 <div className="flex-1 w-full lg:w-0 group">
                   <div 
-                    className="relative bg-gradient-to-br from-zinc-900/90 to-black/90 rounded-2xl lg:rounded-3xl p-6 lg:p-8 border transition-all duration-300 hover:shadow-2xl backdrop-blur-sm"
+                    className="relative bg-gradient-to-br from-zinc-800/95 to-zinc-900/95 rounded-2xl lg:rounded-3xl p-6 lg:p-8 border transition-all duration-300 hover:shadow-2xl backdrop-blur-sm"
                     style={{
-                      borderColor: `${value.accentColor}20`,
-                      boxShadow: `0 0 0 1px ${value.accentColor}10`
+                      borderColor: `${value.accentColor}30`,
+                      boxShadow: `0 0 0 1px ${value.accentColor}15`
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = `${value.accentColor}50`;
-                      e.currentTarget.style.boxShadow = `0 10px 40px ${value.accentColor}20`;
+                      e.currentTarget.style.borderColor = `${value.accentColor}60`;
+                      e.currentTarget.style.boxShadow = `0 10px 40px ${value.accentColor}25`;
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = `${value.accentColor}20`;
-                      e.currentTarget.style.boxShadow = `0 0 0 1px ${value.accentColor}10`;
+                      e.currentTarget.style.borderColor = `${value.accentColor}30`;
+                      e.currentTarget.style.boxShadow = `0 0 0 1px ${value.accentColor}15`;
                     }}
                   >
                     {/* Background accent */}
                     <div 
-                      className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-5 blur-3xl"
+                      className="absolute top-0 right-0 w-32 h-32 rounded-full opacity-8 blur-3xl"
                       style={{ background: value.accentColor }}
                     />
                     
@@ -167,7 +165,7 @@ export function InfinityValuesSection() {
                                 style={{ backgroundColor: value.accentColor }}
                               />
                             </div>
-                            <span className="text-gray-400 text-sm lg:text-base leading-relaxed group-hover/item:text-gray-300 transition-colors">
+                            <span className="text-gray-300 text-sm lg:text-base leading-relaxed group-hover/item:text-gray-200 transition-colors">
                               {item}
                             </span>
                           </li>
@@ -179,7 +177,7 @@ export function InfinityValuesSection() {
                     <div 
                       className={`absolute ${isEven ? 'top-0 right-0' : 'top-0 left-0'} w-24 h-24 opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
                       style={{
-                        background: `radial-gradient(circle at ${isEven ? 'top right' : 'top left'}, ${value.accentColor}15, transparent)`,
+                        background: `radial-gradient(circle at ${isEven ? 'top right' : 'top left'}, ${value.accentColor}20, transparent)`,
                         borderRadius: isEven ? '0 1.5rem 0 100%' : '1.5rem 0 100% 0'
                       }}
                     />

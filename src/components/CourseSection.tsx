@@ -53,7 +53,7 @@ export function CourseSection() {
       content: t.courses.stage2a.content,
       icon: Sparkles,
       color: '#10b981',
-      scrollbarColor: '#10b981'
+      scrollbarColor: '#6b8070'
     },
     {
       title: t.courses.stage2b.title,
@@ -65,7 +65,7 @@ export function CourseSection() {
       content: t.courses.stage2b.content,
       icon: Target,
       color: '#8b5cf6',
-      scrollbarColor: '#8b5cf6'
+      scrollbarColor: '#6b5c8b'
     },
     {
       title: t.courses.stage3.title,

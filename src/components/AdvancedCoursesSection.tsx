@@ -42,7 +42,7 @@ export function AdvancedCoursesSection() {
 
               {/* Content */}
               <div className="p-6 lg:p-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                   {/* 课程时长 */}
                   <div className="bg-indigo-950/40 rounded-lg p-4 border border-indigo-400/20 hover:border-indigo-400/40 transition-colors">
                     <div className="text-indigo-300 text-sm mb-2 uppercase">{t.advancedCoursesSection.starry.duration}</div>
@@ -112,7 +112,7 @@ export function AdvancedCoursesSection() {
 
               {/* Content */}
               <div className="p-6 lg:p-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                   {/* 课程形式 */}
                   <div className="bg-cyan-950/40 rounded-lg p-4 border border-cyan-400/20 hover:border-cyan-400/40 transition-colors">
                     <div className="text-cyan-300 text-sm mb-2 uppercase">{t.advancedCoursesSection.orbiter.courseFormat}</div>
@@ -135,18 +135,6 @@ export function AdvancedCoursesSection() {
                   <div className="bg-cyan-950/40 rounded-lg p-4 border border-cyan-400/20 hover:border-cyan-400/40 transition-colors">
                     <div className="text-cyan-300 text-sm mb-2 uppercase">{t.advancedCoursesSection.orbiter.eligibility}</div>
                     <div className="text-white">{t.advancedCoursesSection.orbiter.eligibilityValue}</div>
-                  </div>
-                </div>
-
-                {/* 核心优势 */}
-                <div className="mb-8">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {t.advancedCoursesSection.orbiter.features.map((feature, index) => (
-                      <div key={index} className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
-                        <span className="text-white">{feature}</span>
-                      </div>
-                    ))}
                   </div>
                 </div>
 
