@@ -198,11 +198,11 @@ export const translations = {
         subtitle:
           "BETA 无界营不仅是课程，更是一个连接产业前沿、验证产品价值、提升职业竞争力的完整体系",
         founderMentorship: {
-          title: "创始人亲自带教",
+          title: "创始人品哥和学界专家,行业大咖轮番上阵TALK",
           items: [
             "每3周一次深度对谈,分享真实创业/产品/管理/行业经验",
-            "产品思维 + 工程方法 + 市场洞察三位一体",
-            '从"做功能"到"做产品"的认知跃迁',
+            "产品思维 + 工程方法 + 市场策略三位一体",
+            '从为工程而产品,到因需求而市场的无界探索',
           ],
         },
         engineerTeaching: {
@@ -376,7 +376,7 @@ export const translations = {
       companyTitle: "关于 BEEBEE AI",
       companyIntro: {
         paragraph1:
-          "BEEBEE AI LTD是一家总部位于新西兰的国际科技公司，团队分布在新西兰、英国、加拿大、美国、泰国、中国。公司专注于GenAI智能产品开发，由具有20年以上互联网/IT经验及8年AI全模态应用开发经验的资深人士于2022年创立。",
+          "BEEBEE AI LTD是一家总部位于新西兰的国际科技公司，团队分布在新西兰、英国、加拿大、��国、泰国、中国。公司专注于GenAI智能产品开发，由具有20年以上互联网/IT经验及8年AI全模态应用开发经验的资深人士于2022年创立。",
         paragraph2: {
           part1: "公司的使命是通过",
           highlight1: "'AI × 私域知识'",
@@ -1090,11 +1090,11 @@ export const translations = {
         subtitle:
           "BETA Infinity Camp is not just a course; it's a comprehensive system connecting industry frontiers, validating product value, and enhancing career competitiveness",
         founderMentorship: {
-          title: "Founder Mentoring",
+          title: "Founder Pin, Academic Experts, and Industry Leaders Take Turns to TALK",
           items: [
             "Deep conversations every 3 weeks, sharing real-world startup/product/management/industry experiences",
-            "Product thinking + engineering methods + market insights in one",
-            'Cognitive leap from "building features" to "building products"',
+            "Product thinking + engineering methods + market strategy in one",
+            'From building products for engineering, to borderless exploration driven by demand and market',
           ],
         },
         engineerTeaching: {
